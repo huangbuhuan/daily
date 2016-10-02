@@ -29,7 +29,7 @@ class MyIncrement {
 	
 }
 
-class Calle2 extends MyIncrement {
+class Callee2 extends MyIncrement {
 	
 	private int i = 0;
 	
@@ -43,7 +43,7 @@ class Calle2 extends MyIncrement {
 
 		@Override
 		public void increment() {
-			Calle2.this.increment();
+			Callee2.this.increment();
 		}
 		
 	}
@@ -67,8 +67,17 @@ class Caller {
 	
 }
 
-
-
 public class Callbacks {
-
+	
+	public static void main(String[] args) {
+		Callee1 c1 = new Callee1();
+		Callee2 c2 = new Callee2();
+		MyIncrement.f(c2);
+		Caller caller1 = new Caller(c1);
+		Caller caller2 = new Caller(c2.getCallbackReference());
+		caller1.go();
+		caller1.go();
+		caller2.go();
+		caller2.go();
+	}	
 }
