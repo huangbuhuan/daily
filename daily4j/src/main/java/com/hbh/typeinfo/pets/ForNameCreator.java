@@ -1,11 +1,9 @@
 package com.hbh.typeinfo.pets;
 
 
-import java.rmi.server.LoaderHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
 
 public class ForNameCreator extends PetCreator{
 
@@ -39,7 +37,7 @@ public class ForNameCreator extends PetCreator{
 	
 	@Override
 	public List<Class<? extends Pet>> types() {
-		return null;
+		return types;
 	}
 	
 
