@@ -1,19 +1,24 @@
 package com.hbh.generic;
 
+/**
+ * 内部类可以使用外部类的类型参数
+ * @author hbh
+ *
+ * @param <T>
+ */
+public class LinkedStack1<T> {
 
-public class LinkedStack<T> {
+	private class Node {
 
-	private static class Node<U> {
-		
-		U item;
-		Node<U> next;
+		T item;
+		Node next;
 
 		Node() {
 			item = null;
 			next = null;
 		}
 
-		Node(U item, Node<U> next) {
+		Node(T item, Node next) {
 			this.item = item;
 			this.next = next;
 		}
@@ -23,10 +28,10 @@ public class LinkedStack<T> {
 		}
 	}
 
-	private Node<T> top = new Node<T>();
+	private Node top = new Node();
 
 	public void push(T item) {
-		top = new Node<T>(item, top);
+		top = new Node(item, top);
 	}
 
 	public T pop() {
