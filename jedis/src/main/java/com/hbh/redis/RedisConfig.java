@@ -2,9 +2,9 @@ package com.hbh.redis;
 
 public class RedisConfig {
 	
-	public static final String HOST="192.168.2.187";
+	public static final String HOST="192.168.3.199";
 	
-	public static final int PORT=6379;
+	public static final int PORT=6380;
 	//最大连接实例数
 	public static final int MAX_ACTIVE=1024;
 	//一个连接池空闲jedis实例数

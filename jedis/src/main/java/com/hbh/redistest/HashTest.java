@@ -14,6 +14,7 @@ public class HashTest {
 	
 	public static void main(String[] args) {
 		Jedis jedis=RedisClient.getResource();
+		
         jedis.hset("user11", "name", "2");
         SortingParams sortingParams = new SortingParams();
         jedis.hset("user:22", "add", "shanghai");  
